@@ -4,12 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+My name is Jun Sun. This is my personal site, and it follows the philosophy of minimalism. I mainly put my little stuffs here, like:
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+* reviews/understanding/comments of academic papers/tech reports
+* codes/programs/git repos
+* random thoughts
+* other interesting/boring stuffs
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+It is basically a place to help myself organize things, but discussions are all welcomed.
