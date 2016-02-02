@@ -1,9 +1,18 @@
 ---
 layout: post
-title:  "RolX"
+title:  "RolX - Role Classification for Networks"
 date:   2016-02-01 16:52:28 +0100
 comments: true
 categories: academic
 ---
 
-RolX - test.
+I have been studying the paper "[RolX: Structural Role Extraction & Mining in Large Graphs](http://briangallagher.net/pubs/henderson-etal-kdd2012.pdf)" for a while, and made a [presentation](https://west.uni-koblenz.de/en/news/role-classification-networks-based-transfer-learning). The paper describes an algorithm RolX, which can perform unsupervised role detection for nodes in networks based on structural features extracted. It also supports transductive transfer learning (across-network role classification), which I am mainly interested in.
+
+Some [analysis](http://lab41.github.io/blog/2014/12/18/rolx-discovering-individuals-roles-in-a-social-network/) by others, already demonstrates the unsupervised learning part. From my understanding, this part has three steps.
+
+[Implementation](https://github.com/Lab41/Circulo/blob/master/circulo/algorithms/rolx.py) is also available (in Python), but has something missing obviously:
+
+* Does not work for undirected networks
+* Again, has only the unsupervised learning part
+
+TBC
