@@ -6,7 +6,7 @@ comments: true
 categories: academic
 ---
 
-I have been studying the paper "[RolX: Structural Role Extraction & Mining in Large Graphs](http://briangallagher.net/pubs/henderson-etal-kdd2012.pdf)" for a while, and made a [presentation](https://west.uni-koblenz.de/en/news/role-classification-networks-based-transfer-learning). The paper describes an algorithm RolX, which can perform unsupervised role detection for nodes in networks based on structural features extracted. It also supports transductive transfer learning (across-network role classification), which I am mainly interested in.
+I have been studying the paper "[RolX: Structural Role Extraction & Mining in Large Graphs](http://briangallagher.net/pubs/henderson-etal-kdd2012.pdf)" for a while, and made a [presentation](https://west.uni-koblenz.de/en/news/role-classification-networks-based-transfer-learning). The paper describes an algorithm RolX, which can perform unsupervised soft clustering for nodes in networks based on structural features extracted. It also supports transductive transfer learning (across-network role classification), which I am mainly interested in.
 
 ## Unsupervised Role Detection
 Some [analysis](http://lab41.github.io/blog/2014/12/18/rolx-discovering-individuals-roles-in-a-social-network/) by others, already demonstrates the unsupervised learning part. From my understanding, this part has three steps.
@@ -18,6 +18,11 @@ Some [analysis](http://lab41.github.io/blog/2014/12/18/rolx-discovering-individu
 # Model Selection
 
 ## Transfer Learning
+
+RolX uses the setting *transductive transfer learning*. In other words, both source and target networks are totally known during training. Moreover, the source network has all known labels available, i.e., roles of nodes are known. However, the target network is completely unlabeled, i.e., roles of nodes are unknown. The goal is to predict the roles of nodes in the target dataset.
+
+RolX performs the above described unsupervised soft clustering on both datasets.
+
 
 ## Implementation
 [Implementation](https://github.com/Lab41/Circulo/blob/master/circulo/algorithms/rolx.py) is also available (in Python), but has something missing obviously:

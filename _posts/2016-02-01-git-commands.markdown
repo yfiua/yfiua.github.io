@@ -11,6 +11,10 @@ categories: others
     Cache git credential (for 15 mins by default), so you don't have to type in your username and password every time.
 
         git config --global credential.helper cache
+    
+    You can provide options via the credential.helper configuration variable (this example increases the cache time to 1 hour).
+
+        git config --global credential.helper 'cache --timeout=3600'
 
 2.  Git 
 
