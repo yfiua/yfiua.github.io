@@ -3,7 +3,7 @@ layout: post
 title:  "Some Useful Git Commands"
 date:   2016-02-01 21:10:00 +0100
 comments: true
-categories: others
+categories: tech
 ---
 
 1.  Credential caching
