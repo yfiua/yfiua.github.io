@@ -8,6 +8,10 @@ categories: tech
 
 Ubuntu and LAMP are both awesome. Here are the quick and clean steps to set up LAMP on ubuntu (using 15.04 currently).
 
+0. Keep your system updated
+
+        $ sudo apt-get update && sudo apt-get upgrade
+
 1. Install Apache
     
    To install Apache you must install the package `apache2`.
