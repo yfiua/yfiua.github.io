@@ -6,7 +6,7 @@ comments: true
 categories: academic
 ---
 
-I have been studying the paper "[RolX: Structural Role Extraction & Mining in Large Graphs](http://briangallagher.net/pubs/henderson-etal-kdd2012.pdf)" for a while, and made a [presentation](https://west.uni-koblenz.de/en/news/role-classification-networks-based-transfer-learning). The paper describes an algorithm RolX, which can perform unsupervised soft clustering for nodes in networks based on structural features extracted. It also supports transductive transfer learning (across-network role classification), which I am mainly interested in.
+I have been studying the paper "[RolX: Structural Role Extraction & Mining in Large Graphs](http://briangallagher.net/pubs/henderson-etal-kdd2012.pdf)" for quite a while, and made a [presentation](https://west.uni-koblenz.de/en/news/role-classification-networks-based-transfer-learning). The paper describes an algorithm RolX, which can perform unsupervised soft clustering for nodes in networks based on structural features extracted. It also supports transductive transfer learning (across-network role classification), which I am mainly interested in.
 
 ## Unsupervised Soft Clustering
 Some [analysis](http://lab41.github.io/blog/2014/12/18/rolx-discovering-individuals-roles-in-a-social-network/) by others, already demonstrates the unsupervised learning part. I am not going too much into details here, but you can read the article or my slides.
@@ -15,6 +15,8 @@ Some [analysis](http://lab41.github.io/blog/2014/12/18/rolx-discovering-individu
 RolX uses the setting *transductive transfer learning*. In other words, both source and target networks are totally known during training. Moreover, the source network has all known labels available, i.e., roles of nodes are known. However, the target network is completely unlabeled, i.e., roles of nodes are unknown. The goal is to predict the roles of nodes in the target dataset.
 
 RolX performs the above described unsupervised soft clustering on both datasets. It trains a logistic regression model, which uses the soft clustering result as features. Then, it uses this model to predict the roles of nodes in the target dataset.
+
+While the way RolX extracts features and performs soft clustering seems to be exactly the same for both datasets, the semantics of the clusters of nodes in these two networks are still arguably different. The legitimacy of this "transfer" is still a question mark.
 
 ## Implementation
 [Implementation](https://github.com/Lab41/Circulo/blob/master/circulo/algorithms/rolx.py) is also available (in Python), but has something missing obviously:
