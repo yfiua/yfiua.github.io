@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Fix Fcitx occupying 100% CPU Problem"
+title:  "Fix Fcitx Occupying 100% CPU Problem"
 date:   2016-02-05 16:00:00 +0100
 comments: true
 categories: tech
@@ -14,7 +14,7 @@ Fcitx occasionally occupies 100% CPU on Ubuntu when you use sogou-pinyin. To fix
 
 2. Disable `ibus-daemon`
 
-   You will need to disable `ibus-daemon` if the above command fails to execute and shows something like *Start XIM error. Another XIM daemon named ibus is running?*. If you simply kill the process, it will respawn soon. Find the executable and rename it.
+   You will need to disable `ibus-daemon` if the above command fails to execute and shows something like *"Start XIM error. Another XIM daemon named ibus is running?"* If you simply kill the process, it will respawn soon. Find the executable and rename it.
    
         $ sudo mv /usr/bin/ibus-daemon /usr/bin/ibus-daemon.bak
 
