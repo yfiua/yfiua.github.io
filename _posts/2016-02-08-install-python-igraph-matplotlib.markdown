@@ -20,9 +20,9 @@ The `python-igraph` in Ubuntu's default repository is usually outdated. To insta
     
         $ sudo pip install igraph
 
-I have tried in both Ubuntu 14.04 and 15.04.
-
 3. I had to install `libfreetype6-dev` and `libxft-dev` in order to enable `matplotlib`
 
         $ sudo apt-get install libfreetype6-dev libxft-dev
         $ sudo pip install matplotlib
+
+I have tried in both Ubuntu 14.04 and 15.04.
