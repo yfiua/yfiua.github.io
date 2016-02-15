@@ -6,4 +6,6 @@ comments: true
 categories: academic
 ---
 
-TBA.
+Download: [click](http://141.26.208.108:8080/datasets/wiki-talk/)
+
+Extraction code: [click](https://github.com/yfiua/wiki-talk-parser/)
