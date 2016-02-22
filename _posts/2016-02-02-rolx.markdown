@@ -9,7 +9,7 @@ categories: academic
 I have been studying the paper "[RolX: Structural Role Extraction & Mining in Large Graphs](http://briangallagher.net/pubs/henderson-etal-kdd2012.pdf)" for quite a while, and made a [presentation](https://west.uni-koblenz.de/en/news/role-classification-networks-based-transfer-learning). The paper describes an algorithm RolX, which can perform unsupervised soft clustering for nodes in networks based on structural features extracted. It also supports transductive transfer learning (across-network role classification), which I am mainly interested in.
 
 ## Unsupervised Soft Clustering
-Some [analysis](http://lab41.github.io/blog/2014/12/18/rolx-discovering-individuals-roles-in-a-social-network/) by others, already demonstrates the unsupervised learning part. I am not going too much into details here, but you can read the article or my slides.
+Some [analysis](http://lab41.github.io/blog/2014/12/18/rolx-discovering-individuals-roles-in-a-social-network/) by others, already demonstrates the unsupervised learning part. I am not going too much into details here, but you can read the article or my [slides](http://141.26.208.108:8080/presentations/oberseminar/2016-01-28-rolx.pdf).
 
 ## Transfer Learning
 RolX uses the setting *transductive transfer learning*. In other words, both source and target networks are totally known during training. Moreover, the source network has all known labels available, i.e., roles of nodes are known. However, the target network is completely unlabeled, i.e., roles of nodes are unknown. The goal is to predict the roles of nodes in the target dataset.
