@@ -18,11 +18,11 @@ The `python-igraph` in Ubuntu's default repository is usually outdated. To insta
 
    To avoid error `could not create '/usr/local/lib/python2.7/dist-packages/igraph': Permission denied`, use:
     
-        $ sudo pip install igraph
+        $ sudo -H pip install python-igraph
 
 3. I had to install `libfreetype6-dev` and `libxft-dev` in order to enable `matplotlib`
 
         $ sudo apt-get install libfreetype6-dev libxft-dev
-        $ sudo pip install matplotlib
+        $ sudo -H pip install matplotlib
 
 I have tried in both Ubuntu 14.04 and 15.04.
