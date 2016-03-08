@@ -29,7 +29,7 @@ Ubuntu and LAMP are both awesome. Here are the quick and clean steps to set up L
 
    To check if PHP is working, write a simple script
     
-        $ sudo echo "<?php phpinfo();" > /var/www/html/phpinfo.php
+        $ sudo bash -c "echo '<?php phpinfo();' > /var/www/html/phpinfo.php"
 
    to see your [PHP information](http://localhost/phpinfo.php). Don't forget to delete it afterwards.
 
