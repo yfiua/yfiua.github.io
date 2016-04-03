@@ -28,4 +28,9 @@ categories: tech
           fi
         }
 
+3.  Unicode displaying
+
+    Use this command to let your git display Unicode characters correctly.
+
+        git config --global core.quotepath false
 
