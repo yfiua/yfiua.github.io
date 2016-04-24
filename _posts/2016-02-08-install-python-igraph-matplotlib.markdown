@@ -8,11 +8,19 @@ categories: tech
 
 1. Use Intel compilers and MKL to compile `NumPy` and `SciPy`
 
-* Install [Intel C++ and Fortran compilers](https://software.intel.com/en-us/intel-compilers) and [MKL](https://software.intel.com/en-us/intel-mkl), which are free for academic use.
+* Install [Intel C++ and Fortran compilers](https://software.intel.com/en-us/intel-compilers) and [MKL](https://software.intel.com/en-us/intel-mkl), which are free for academic use. Sourse the environment scripts:
+
+		$ source /*path-to-mkl*/bin/mklvars.sh intel64
+		$ source /*path-to-compilers*/linux/bin/compilervars.sh -arch intel64
+
+	Check with some commands:
+
+		$ icc -v
+		$ echo $LD_LIBRARY_PATH
     
 * Checkout the latest stable `NumPy` and `SciPy` from their Git repositories.
     
-* Inside numpy directory, create a file named `site.cfg` and type in the following:
+* Inside `numpy/`, create a file named `site.cfg` and type in the following:
         
         [mkl]
         library_dirs = /path-to-mkl/lib/intel64/
@@ -25,19 +33,31 @@ categories: tech
         cc_exe = 'icc -m64 -O3 -g -fPIC -fp-model strict -fomit-frame-pointer -openmp -xHost'
         #cc_args = '-fPIC'
 
-* In `numpy/numpy/fcompiler/intel.py`, modify `class IntelEM64TFCompiler`
+* In `numpy/numpy/fcompiler/intel.py`, modify `class IntelEM64TFCompiler` and change the code to something like this:
+
+		possible_executables = ['ifort']
 
 		def get_flags(self):
 			# Scipy test failures with -O2 or -O3
-			return ['-O1 -g -xhost -openmp -fp-model strict -fPIC'] and change the code to something like this:
-
+			return ['-O1 -g -xhost -openmp -fp-model strict -fPIC']
 		def get_flags_opt(self):
   			return []
 
 		def get_flags_arch(self):
 			return []
 
+* In `numpy/`, build and install `NumPy`:
 
+		$ python setup.py build --compiler=intelem | tee build.log
+		$ sudo -H python setup.py install | tee install.log
+
+	For some reason, installing without `sudo` causes `f2py` not correctly configured. Test if the installisation was successfull:
+
+		$ python
+		>>> import numpy
+		>>> numpy.__version__()
+		>>> numpy.__config__.show()
+		>>> numpy.test()
 
 
 
