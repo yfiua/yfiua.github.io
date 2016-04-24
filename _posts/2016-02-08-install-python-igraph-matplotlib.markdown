@@ -8,11 +8,11 @@ categories: tech
 
 1. Use Intel compilers and MKL to compile `NumPy` and `SciPy`
 
-    * Install [Intel C++ and Fortran compilers](https://software.intel.com/en-us/intel-compilers) and [MKL](https://software.intel.com/en-us/intel-mkl), which are free for academic use.
+* Install [Intel C++ and Fortran compilers](https://software.intel.com/en-us/intel-compilers) and [MKL](https://software.intel.com/en-us/intel-mkl), which are free for academic use.
     
-    * Checkout the latest stable `NumPy` and `SciPy` from their Git repositories.
-
-    * Inside numpy directory, create a file named `site.cfg` and type in the following:
+* Checkout the latest stable `NumPy` and `SciPy` from their Git repositories.
+    
+* Inside numpy directory, create a file named `site.cfg` and type in the following:
         
         [mkl]
         library_dirs = /path-to-mkl/lib/intel64/
@@ -20,12 +20,12 @@ categories: tech
         mkl_libs = mkl_rt
         lapack_libs =
 
-    * In `numpy/numpy/intelccompiler.py`, modify `class IntelEM64TCCompiler` and change the code to something like this:
+* In `numpy/numpy/intelccompiler.py`, modify `class IntelEM64TCCompiler` and change the code to something like this:
 
         cc_exe = 'icc -m64 -O3 -g -fPIC -fp-model strict -fomit-frame-pointer -openmp -xHost'
         #cc_args = '-fPIC'
 
-    * In `numpy/numpy/fcompiler/intel.py`, modify `class IntelEM64TFCompiler`
+* In `numpy/numpy/fcompiler/intel.py`, modify `class IntelEM64TFCompiler`
 
 		def get_flags(self):
 			# Scipy test failures with -O2 or -O3
