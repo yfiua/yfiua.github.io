@@ -23,8 +23,8 @@ categories: tech
 * Inside `numpy/`, create a file named `site.cfg` and type in the following:
         
         [mkl]
-        library_dirs = /path-to-mkl/lib/intel64/
-        include_dirs = /path-to-mkl/include/
+        library_dirs = /*path-to-mkl*/lib/intel64/
+        include_dirs = /*path-to-mkl*/include/
         mkl_libs = mkl_rt
         lapack_libs =
 
@@ -59,6 +59,18 @@ categories: tech
 		>>> numpy.__config__.show()
 		>>> numpy.test()
 
+* Now `NumPy` is ALREADY installed, let's build and install `SciPy`. Inside `scipy/`,
+
+		$ python setup.py config --compiler=intelem --fcompiler=intelem build_clib --compiler=intelem --fcompiler=intelem build_ext --compiler=intelem --fcompiler=intelem | tee build.log
+		$ python setup.py install --user
+
+	Test if the installisation was successfull:
+
+		$ python
+		>>> import scipy
+		>>> scipy.__version__()
+		>>> scipy.__config__.show()
+		>>> scipy.test()
 
 
 The `python-igraph` in Ubuntu's default repository is usually outdated. To install the newest one:
@@ -81,3 +93,7 @@ The `python-igraph` in Ubuntu's default repository is usually outdated. To insta
         $ sudo -H pip install matplotlib
 
 I have tried in both Ubuntu 14.04 and 15.04.
+
+Benchmark:
+
+On a server with 8 cores @ 2.9GHz
