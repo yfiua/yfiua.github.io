@@ -1,10 +1,45 @@
 ---
 layout: post
-title:  "Install python-igraph and matplotlib on Ubuntu"
+title:  "Setting up High Performance Python Environment for Network Analysis"
 date:   2016-02-08 16:00:00 +0100
 comments: true
 categories: tech
 ---
+
+1. Use Intel compilers and MKL to compile `NumPy` and `SciPy`
+
+    * Install [Intel C++ and Fortran compilers](https://software.intel.com/en-us/intel-compilers) and [MKL](https://software.intel.com/en-us/intel-mkl), which are free for academic use.
+    
+    * Checkout the latest stable `NumPy` and `SciPy` from their Git repositories.
+
+    * Inside numpy directory, create a file named `site.cfg` and type in the following:
+        
+        [mkl]
+        library_dirs = /path-to-mkl/lib/intel64/
+        include_dirs = /path-to-mkl/include/
+        mkl_libs = mkl_rt
+        lapack_libs =
+
+    * In `numpy/numpy/intelccompiler.py`, modify `class IntelEM64TCCompiler` and change the code to something like this:
+
+        cc_exe = 'icc -m64 -O3 -g -fPIC -fp-model strict -fomit-frame-pointer -openmp -xHost'
+        #cc_args = '-fPIC'
+
+    * In `numpy/numpy/fcompiler/intel.py`, modify `class IntelEM64TFCompiler`
+
+		def get_flags(self):
+			# Scipy test failures with -O2 or -O3
+			return ['-O1 -g -xhost -openmp -fp-model strict -fPIC'] and change the code to something like this:
+
+		def get_flags_opt(self):
+  			return []
+
+		def get_flags_arch(self):
+			return []
+
+
+
+
 
 The `python-igraph` in Ubuntu's default repository is usually outdated. To install the newest one:
 
