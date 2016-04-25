@@ -28,12 +28,12 @@ categories: tech
         mkl_libs = mkl_rt
         lapack_libs =
 
-* In `numpy/numpy/intelccompiler.py`, modify `class IntelEM64TCCompiler` and change the code to something like this:
+* In `numpy/numpy/distutils/intelccompiler.py`, modify `class IntelEM64TCCompiler` and match the code to something like this:
 
         cc_exe = 'icc -m64 -O3 -g -fPIC -fp-model strict -fomit-frame-pointer -openmp -xHost'
         #cc_args = '-fPIC'
 
-* In `numpy/numpy/fcompiler/intel.py`, modify `class IntelEM64TFCompiler` and change the code to something like this:
+* In `numpy/numpy/distutils/fcompiler/intel.py`, modify `class IntelEM64TFCompiler` and match the code to something like this:
 
 		possible_executables = ['ifort']
 
@@ -51,7 +51,7 @@ categories: tech
 		$ python setup.py build --compiler=intelem | tee build.log
 		$ sudo -H python setup.py install | tee install.log
 
-	For some reason, installing without `sudo` causes `f2py` not correctly configured. Test if the installisation was successfull:
+	For some reason, installing without `sudo` causes `f2py` not correctly configured. Test if the installisation was successful:
 
 		$ python
 		>>> import numpy
@@ -64,7 +64,7 @@ categories: tech
 		$ python setup.py config --compiler=intelem --fcompiler=intelem build_clib --compiler=intelem --fcompiler=intelem build_ext --compiler=intelem --fcompiler=intelem | tee build.log
 		$ python setup.py install --user
 
-	Test if the installisation was successfull:
+	Test if the installisation was successful:
 
 		$ python
 		>>> import scipy
