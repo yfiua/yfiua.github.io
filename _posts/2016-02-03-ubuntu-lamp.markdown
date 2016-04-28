@@ -37,7 +37,7 @@ Ubuntu and LAMP are both awesome. Here are the quick and clean steps to set up L
 
    Install the `mysql-server` package and its PHP support. Choose a secure password when prompted.
 
-        $ sudo apt-get install mysql-server php5-mysql
+        $ sudo apt-get install mysql-server php5-mysqlnd
     
    Run `mysql_secure_installation` to secure MySQL.
         
