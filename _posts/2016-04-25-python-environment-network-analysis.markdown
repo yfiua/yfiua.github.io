@@ -92,7 +92,7 @@ The `python-igraph` in Ubuntu's default repository is usually outdated. To insta
         $ sudo apt-get install libfreetype6-dev libxft-dev
         $ sudo -H pip install matplotlib
 
-I have tried in both Ubuntu 14.04 and 15.04.
+I have tried in both Ubuntu 14.04 and 16.04.
 
 Benchmark:
 
