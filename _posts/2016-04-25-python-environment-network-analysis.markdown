@@ -41,7 +41,7 @@ categories: tech
 			# Scipy test failures with -O2 or -O3
 			return ['-O1 -g -xhost -openmp -fp-model strict -fPIC']
 		def get_flags_opt(self):
-  			return []
+            return []
 
 		def get_flags_arch(self):
 			return []
@@ -55,7 +55,7 @@ categories: tech
 
 		$ python
 		>>> import numpy
-		>>> numpy.__version__()
+		>>> numpy.__version__
 		>>> numpy.__config__.show()
 		>>> numpy.test()
 
@@ -68,7 +68,7 @@ categories: tech
 
 		$ python
 		>>> import scipy
-		>>> scipy.__version__()
+		>>> scipy.__version__
 		>>> scipy.__config__.show()
 		>>> scipy.test()
 
