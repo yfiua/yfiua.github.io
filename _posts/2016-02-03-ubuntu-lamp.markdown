@@ -22,9 +22,16 @@ Ubuntu and LAMP are both awesome. Here are the quick and clean steps to set up L
 
 2. Install PHP
 
-   You will need the package `php5` and also `libapache2-mod-php5` in order to let it work with Apache.
+   For PHP 5, you will need the package `php5` and also `libapache2-mod-php5` in order to let it work with Apache:
 
         $ sudo apt-get install php5 libapache2-mod-php5
+
+   For PHP 7:
+    
+        $ sudo apt-get install php7.0 libapache2-mod-php7.0
+
+   Then
+
         $ sudo service apache2 restart
 
    To check if PHP is working, write a simple script
@@ -37,8 +44,14 @@ Ubuntu and LAMP are both awesome. Here are the quick and clean steps to set up L
 
    Install the `mysql-server` package and its PHP support. Choose a secure password when prompted.
 
+   For PHP 5:
+
         $ sudo apt-get install mysql-server php5-mysqlnd
     
+   For PHP 7:
+
+        $ sudo apt-get install mysql-server php7.0-mysql
+
    Run `mysql_secure_installation` to secure MySQL.
         
         $ mysql_secure_installation
